@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="800.0" prefWidth="1000.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tn.esprit.b4.esprit1718b4erp.app.client.controllers.ProduitprojController">
+   <children>
+      <AnchorPane layoutX="-3.0" layoutY="-1.0" prefHeight="63.0" prefWidth="1007.0" style="-fx-background-color: #000099;" />
+      <AnchorPane layoutX="-2.0" layoutY="62.0" prefHeight="739.0" prefWidth="210.0" style="-fx-background-color: #000099;">
+         <children>
+            <ImageView fitHeight="99.0" fitWidth="210.0" layoutY="-61.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/accueil_icon.PNG" />
+               </image>
+            </ImageView>
+            <Separator layoutX="5.0" layoutY="603.0" prefWidth="200.0" />
+            <Button fx:id="back" layoutX="19.0" layoutY="647.0" mnemonicParsing="false" onAction="#back" prefHeight="55.0" prefWidth="161.0" style="-fx-background-color: #ffffff;" text="Back" textFill="#303232">
+               <font>
+                  <Font name="System Bold Italic" size="23.0" />
+               </font>
+            </Button>
+            <ImageView fitHeight="55.0" fitWidth="66.0" layoutX="19.0" layoutY="647.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/back.png" />
+               </image>
+            </ImageView>
+            <Separator layoutY="54.0" prefHeight="3.0" prefWidth="210.0" />
+         </children>
+      </AnchorPane>
+      <TableView fx:id="projets" layoutX="208.0" layoutY="135.0" prefHeight="399.0" prefWidth="796.0">
+        <columns>
+          <TableColumn fx:id="Projectname" prefWidth="206.0" text="Project name" />
+          <TableColumn fx:id="decription" prefWidth="145.0" text="Description" />
+            <TableColumn fx:id="Debutdate" prefWidth="144.0" text="Debut date" />
+            <TableColumn fx:id="EndingDate" prefWidth="148.0" text="Ending Date" />
+            <TableColumn fx:id="price" prefWidth="147.0" text="Price" />
+        </columns>
+      </TableView>
+      <TextField fx:id="pn" layoutX="332.0" layoutY="565.0" />
+      <Label layoutX="239.0" layoutY="570.0" text="Project name">
+         <font>
+            <Font name="System Bold Italic" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="598.0" layoutY="570.0" text="Debut date">
+         <font>
+            <Font name="System Bold Italic" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="243.0" layoutY="616.0" text="Ending date">
+         <font>
+            <Font name="System Bold Italic" size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="dd" layoutX="690.0" layoutY="565.0" />
+      <TextField fx:id="ed" layoutX="332.0" layoutY="611.0" />
+      <Button fx:id="addp" layoutX="294.0" layoutY="718.0" mnemonicParsing="false" onAction="#addp" style="-fx-background-color: #2d7831;" text="Add" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="20.0" />
+         </font>
+      </Button>
+      <Button fx:id="Deletp" layoutX="481.0" layoutY="718.0" mnemonicParsing="false" onAction="#Deletep" style="-fx-background-color: #ff0000;" text="Delete" textFill="#fffffff7">
+         <font>
+            <Font name="System Bold Italic" size="20.0" />
+         </font>
+      </Button>
+      <Button fx:id="Updatep" layoutX="690.0" layoutY="719.0" mnemonicParsing="false" onAction="#Updatep" style="-fx-background-color: #ff7700;" text="Update" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="20.0" />
+         </font>
+      </Button>
+      <Label layoutX="275.0" layoutY="89.0" text="Client Projects">
+         <font>
+            <Font name="System Bold Italic" size="24.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="74.0" fitWidth="66.0" layoutX="208.0" layoutY="60.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/icons8-administrator-male-48.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="44.0" fitWidth="50.0" layoutX="253.0" layoutY="716.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/icons8-plus-48.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="55.0" fitWidth="55.0" layoutX="436.0" layoutY="713.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/icons8-delete-48.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="44.0" fitWidth="55.0" layoutX="646.0" layoutY="716.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/modifier-icone-7876-128.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="sendmail" layoutX="877.0" layoutY="719.0" mnemonicParsing="false" onAction="#sendm" style="-fx-background-color: #26C4EC;" text="Sendmail" textFill="#fcf9f9" textOverrun="CENTER_ELLIPSIS">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Button>
+      <Label layoutX="234.0" layoutY="673.0" text="Description">
+         <font>
+            <Font name="System Bold Italic" size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="desc" layoutX="332.0" layoutY="668.0" />
+      <Label layoutX="620.0" layoutY="616.0" text="Price">
+         <font>
+            <Font name="System Bold Italic" size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="pr" layoutX="690.0" layoutY="611.0" />
+      <ImageView fitHeight="42.0" fitWidth="35.0" layoutX="842.0" layoutY="721.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../../../../Desktop/img/appt-mail-icone-3850-32.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

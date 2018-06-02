@@ -1,0 +1,46 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                 xmlns:p="http://primefaces.org/ui"
+                 template="/template-rh/main_rh.xhtml"
+                 xmlns:p1="http://primefaces.org/ui">
+                	
+			<ui:define name="pageContent">
+			
+  
+     <div id="piechart" style="width: 900px; height: 500px;"></div>
+     
+     
+     
+      <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+      <ui:repeat value="#{Charts.listemployee}" var="user">
+
+      function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+           ['USer', 'Hours per Day'],
+         ['#{user.firstname}',     '#{user.cin}'],
+//           ['Eat',      2],
+//           ['Commute',  2],
+//           ['Watch TV', 2],
+//           ['Sleep',    7]
+        ]);
+
+        var options = {
+          title: 'working hours by employee'
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+        chart.draw(data, options);
+      }
+      </ui:repeat>
+      
+    </script>
+    
+			</ui:define>
+</ui:composition>

@@ -1,0 +1,81 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	template="/template-rh/main_rh.xhtml"
+	xmlns:p1="http://primefaces.org/ui">
+
+	<ui:define name="pageContent">
+
+		<h2>Vacation list</h2>
+		<h:form id="form">
+
+
+
+
+			<table id="simple-table" class="table  table-bordered table-hover">
+				<thead>
+
+					<tr>
+						<th></th>
+						<th>Employee Name</th>
+						<th>Employee ID</th>
+						<th>date Begin</th>
+						<th>Date End</th>
+						<th>type</th>
+						<th>note</th>
+						<th>number of days</th>
+						<th>Operation</th>
+
+
+					</tr>
+
+				</thead>
+				<tbody>
+
+					<ui:repeat value="#{EmployeeBean.listcongé}" var="c">
+
+
+
+						<tr>
+							<td class="center"><label class="pos-rel"> <input
+									type="checkbox" class="ace" /> <span class="lbl"></span>
+							</label></td>
+							<td>#{c.user.firstname}</td>
+							<td>#{c.user.cin}</td>
+							<td>#{c.dateDebut}</td>
+							<td>#{c.dateFin}</td>
+							<td>#{c.type}</td>
+							<td>#{c.comment}</td>
+							<td>#{EmployeeBean.getNbrDays(c.id_congé)}</td>
+							<td><h:commandButton
+									class="width-35 pull-right btn btn-sm btn-primary"
+									action="#{EmployeeBean.refuse(c.id_congé)}" value="refuse">
+
+								</h:commandButton> <h:commandButton
+									class="width-35 pull-right btn btn-sm btn-primary"
+									action="#{EmployeeBean.accept(c.id_congé)}" value="accept">
+
+								</h:commandButton></td>
+
+
+
+						</tr>
+
+					</ui:repeat>
+				</tbody>
+			</table>
+
+
+
+
+
+		</h:form>
+
+
+
+
+
+	</ui:define>
+</ui:composition>

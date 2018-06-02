@@ -1,0 +1,121 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                 xmlns:p="http://primefaces.org/ui"
+                 template="/templatecrm/main.xhtml"
+                  xmlns:s="http://jboss.com/products/seam/taglib"
+              
+               >
+                	
+			<ui:define name="pageContent">
+			
+			
+									
+<h:messages class="alert alert-info" id="message" showDetail="true"
+		autoUpdate="true" closable="true" />
+			<div class="widget-box">
+			
+			<div class="widget-header widget-header-small">
+			<h5 class="widget-title lighter">Add Client</h5>
+			</div>
+			
+			<div class="widget-main">
+			<form class="form-search">
+			<div class="row">
+			<div class="col-xs-12 col-sm-8">
+			
+			<h:form>
+			
+			<div class="row">
+		<div class="col-xs-12 col-sm-5">
+			<span class="block input-icon input-icon-right"> Name
+				<h:inputText  required="true" requiredMessage="Insert  name" value="#{clientBean.nom}" type="text" id="inputInfo" class="width-100" />
+			</span>
+		</div>
+		</div>
+		
+		
+		<div class="row">
+		<div class="col-xs-12 col-sm-5">
+			<span class="block input-icon input-icon-right"> Adress
+				<h:inputText required="true" requiredMessage="Insert  adress"  value="#{clientBean.adresse}" type="text" class="width-100" />
+			</span>
+		</div>
+		</div>
+		
+		<div class="row">
+		<div class="col-xs-12 col-sm-5">
+			<span class="block input-icon input-icon-right"> Email
+				<h:inputText value="#{clientBean.email}" type="text"  class="width-100" />
+			</span>
+		</div>
+		</div>
+		
+		<div class="row">
+		<div class="col-xs-12 col-sm-5">
+			<span class="block input-icon input-icon-right"> Telephone number
+				<h:inputText value="#{clientBean.numt}" type="text" class="width-100" />
+			
+			</span>
+		</div>
+		</div>
+		
+			<div class="row">
+		<div class="col-xs-12 col-sm-5">
+			<span class="block input-icon input-icon-right"> Account number
+				<h:inputText value="#{clientBean.numc}" type="text" class="width-100" />
+			
+			</span></div>
+		</div>
+			
+
+		
+	
+ 
+    
+  
+       
+   			<div class="row">
+			<div class="col-xs-12 col-sm-5" >
+		
+			<h:commandButton class="btn btn-white btn-info btn-bold"  action="#{clientBean.ajoutclient()}"  value="Save" >
+
+			</h:commandButton>
+		   	
+		   	
+		   	<h:outputText value="#{clientBean.rec}" /> 
+			</div>
+			</div>
+			
+
+			
+  	</h:form>
+  	
+  	
+		   		<h:form>
+		<h:inputText value="#{clientBean.rec}" />
+		   
+			<h:commandButton class="btn btn-white btn-info btn-bold"  action="#{clientBean.ajouttyperec()}"  value="add reclamation type" >
+
+			</h:commandButton>
+		   	
+		   	</h:form>
+  	</div>
+	</div>
+	</form>
+	</div>
+  	
+  	</div>
+  	
+  	
+
+  	
+  	
+  	
+  	
+  	
+  	
+			
+			
+			</ui:define></ui:composition>

@@ -1,0 +1,105 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                 xmlns:p="http://primefaces.org/ui"
+                 template="/template-ref/main.xhtml"
+                  xmlns:s="http://jboss.com/products/seam/taglib"
+              
+               >
+                	
+			<ui:define name="pageContent">
+			
+						
+			
+			 <table id="simple-table" class="table  table-bordered table-hover">
+											<thead>
+												<tr>
+												<th >Costumer /Company Name</th>
+													<th>Adress</th>
+													<th>Order Date</th>
+													<th>Shippment Date</th>
+													<th>Shipping Costs</th>
+													<th >Quantity (units)</th>
+													<th >Unit Selling Price</th>
+													<th >Unit Cost Price</th>
+													<th >Total Bill</th>
+												
+													<th >details</th>
+													
+													<th>Operation</th>
+												</tr>
+											</thead>
+						<tbody>					
+					<ui:repeat value="#{orderBean.displayallOrder()}" var="pp">
+							
+					<tr>
+						<td>#{pp.costumer}</td>
+						<td>#{pp.adress}</td>
+						<td>#{pp.orderDate}</td>
+						<td>#{pp.shippedDate}</td>
+						<td>#{pp.shippingCost}</td>
+						<td>#{pp.quantity}</td>
+						<td>#{pp.sellingPriceUnit}</td>
+						<td>#{pp.unitSellingPrice}</td>
+						<td>#{pp.bill}</td>
+						
+				
+						<td>
+						
+									  
+					   <p:commandButton id="movieBtn" value="show details" type="button" />
+    					<p:overlayPanel id="moviePanel" for="movieBtn" >
+       					<p:dataTable var="pr" value="#{orderBean.displayall(pp)}">
+         
+				  			<p:column headerText="Product Name">
+				                <h:outputText value="#{pr.name}" />
+				            </p:column>
+				            	<p:column headerText="Unit Price">
+				               <h:outputText value="#{pr.unitPrice}" />
+				            </p:column>
+           
+ 
+     					 </p:dataTable>
+    					</p:overlayPanel>
+						
+						</td>
+					
+						
+						
+						<td>
+					<h:form>
+						<h:commandButton action="#{orderBean.removeOrder(pp)}"  value="delete" class="btn btn-xs btn-danger" >
+						
+						</h:commandButton>
+						
+						
+						
+					</h:form>
+							<h:form>
+						<h:commandButton action="#{orderBean.showStat(pp)}"  value="stat" class="btn btn-xs btn-danger" >
+						
+						</h:commandButton>
+						
+						
+						
+					</h:form>
+					
+						</td>
+					
+						
+		</tr>
+						
+						
+						
+						
+						
+						
+
+				</ui:repeat>
+				</tbody>
+											
+											
+</table>
+			
+			</ui:define></ui:composition>

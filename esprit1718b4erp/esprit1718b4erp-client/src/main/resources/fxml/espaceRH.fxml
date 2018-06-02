@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+
+<AnchorPane id="AnchorPane" prefHeight="800.0" prefWidth="1000.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tn.esprit.b4.esprit1718b4erp.app.client.controllers.EspaceRHController">
+    <stylesheets>
+        <URL value="@/styles/espacerh.css" />
+    </stylesheets>
+   <children>
+      <Pane layoutX="81.0" layoutY="180.0" prefHeight="606.0" prefWidth="813.0" style="-fx-background-color: #1B6CD7;">
+         <children>
+            <ImageView fitHeight="571.0" fitWidth="766.0" layoutX="24.0" layoutY="18.0" opacity="0.62" pickOnBounds="true">
+               <image>
+                  <Image url="@../images/hr_back.jpg" />
+               </image>
+            </ImageView>
+            <Pane layoutX="294.0" layoutY="236.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #FFFF;">
+               <children>
+                  <ImageView fitHeight="209.0" fitWidth="200.0" layoutY="-4.0" onMouseClicked="#OnMouseClickedPayroll">
+                     <image>
+                        <Image url="@../images/pay.jpg" />
+                     </image>
+                  </ImageView>
+               </children></Pane>
+            <Pane layoutX="39.0" layoutY="36.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #FFFF;">
+               <children>
+                  <ImageView fitHeight="269.0" fitWidth="254.0" layoutX="-29.0" layoutY="-14.0" onMouseClicked="#OnMouseClickedEMployeManagement">
+                     <image>
+                        <Image url="@../images/empManegment.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Pane layoutX="570.0" layoutY="372.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #FFFF;">
+               <children>
+                  <ImageView fx:id="imageViewStat" fitHeight="200.0" fitWidth="200.0" layoutX="-1.0" layoutY="1.0" onMouseClicked="#OnMouseClickedStat">
+                     <image>
+                        <Image url="@../images/stat.jpg" />
+                     </image>
+                  </ImageView>
+               </children></Pane>
+         </children></Pane>
+      <ImageView fitHeight="177.0" fitWidth="1000.0" layoutX="1.0" layoutY="3.0" pickOnBounds="true">
+         <image>
+            <Image url="/images/hr_1.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="btn_logout" layoutX="910.0" layoutY="194.0" mnemonicParsing="false" onAction="#onClickLogout" style="-fx-background-color: #1B6CD7; -fx-background-radius: 5em; -fx-text-fill: #FFFF;" text="Logout" />
+   </children>
+</AnchorPane>

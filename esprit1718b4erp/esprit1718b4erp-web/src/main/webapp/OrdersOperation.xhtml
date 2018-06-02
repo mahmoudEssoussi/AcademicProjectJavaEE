@@ -1,0 +1,175 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                 xmlns:p="http://primefaces.org/ui"
+                 template="/template-ref/main.xhtml"
+           
+              
+               >
+                	
+			<ui:define name="pageContent">
+			
+			
+									
+<h:messages class="alert alert-info" id="message" showDetail="true"
+		autoUpdate="true" closable="true" />
+			<div class="widget-box">
+			
+			<div class="widget-header widget-header-small">
+			<h5 class="widget-title lighter">Add Product</h5>
+			</div>
+			
+			<div class="widget-main">
+			<form class="form-search">
+			<div class="row">
+			<div class="col-xs-12 col-sm-8">
+			
+			<h:form>
+			
+			<div class="row">
+		<div class="col-xs-12 col-sm-5">
+			<span class="block input-icon input-icon-right"> Costumer /Company Name
+				<h:inputText  required="true" requiredMessage="Insert  name" value="#{orderBean.order.costumer}" type="text" id="inputInfo" class="width-100" />
+			</span>
+		</div>
+		</div>
+		
+		
+		<div class="row">
+		<div class="col-xs-12 col-sm-5">
+			<span class="block input-icon input-icon-right"> Adress
+				<h:inputText required="true" requiredMessage="Insert  ref"  value="#{orderBean.order.adress}" type="text" class="width-100" />
+			</span>
+		</div>
+		</div>
+		
+		<div class="row">
+		<div class="col-xs-12 col-sm-5">
+			<span class="block input-icon input-icon-right"> Order Date
+			<p:calendar value="#{orderBean.order.orderDate}" />
+			</span>
+		</div>
+		</div>
+		
+		
+			<div class="row">
+		<div class="col-xs-12 col-sm-5">
+			<span class="block input-icon input-icon-right"> shipped Date
+			<p:calendar  value="#{orderBean.order.shippedDate}" />
+			</span>
+		</div>
+		</div>
+		
+	
+
+
+
+			
+			<div class="row">
+		<div class="col-xs-12 col-sm-5">
+			<span class="block input-icon input-icon-right"> Shipping Cost
+				<h:inputText value="#{orderBean.order.shippingCost}" type="text" class="width-100" />
+			
+			</span></div>
+		</div>
+			
+			
+						<div class="row">
+		<div class="col-xs-12 col-sm-5">
+			<span class="block input-icon input-icon-right"> selling price per unit
+				<h:inputText value="#{orderBean.order.sellingPriceUnit}" type="text" class="width-100" />
+			
+			</span></div>
+		</div>
+			
+
+		
+	
+ 
+    
+  
+       
+   			<div class="row">
+			<div class="col-xs-12 col-sm-5" >
+			<h:form>
+			<h:commandButton class="btn btn-white btn-info btn-bold"  action="#{orderBean.addOrder()}"  value="Save" >
+
+			</h:commandButton>
+		   	</h:form>
+			</div>
+			</div>
+			
+
+			
+  	</h:form>
+  	
+  	
+  	</div>
+	</div>
+	</form>
+	</div>
+  	
+  	</div>
+  	
+  	
+  	
+  	  	<div class="widget-box">
+			
+			<div class="widget-header widget-header-small">
+			<h5 class="widget-title lighter">Affect Product to Order </h5>
+			</div>
+			
+			<div class="widget-main">
+			<form class="form-search">
+			<div class="row">
+			<div class="col-xs-12 col-sm-8">
+			
+			<h:form>
+			
+			 <h:selectOneMenu value="#{orderBean.product}" converter="ProductConverter">
+                <f:selectItems value="#{productBean.listProduct}" var="Pro"
+                               itemValue="#{Pro}"
+                               itemLabel="#{Pro.name}"/>
+            </h:selectOneMenu>
+  	
+   			 <h:selectOneMenu value="#{orderBean.order}" converter="OrderConverter">
+                <f:selectItems value="#{orderBean.listOrder}" var="ord"
+                               itemValue="#{ord}"
+                               itemLabel="#{ord.costumer}"/>
+            </h:selectOneMenu>
+  	
+
+
+<div class="row">
+		<div class="col-xs-12 col-sm-5">
+			<span class="block input-icon input-icon-right"> quantity
+				<h:inputText value="#{orderBean.quantity}" type="text"  class="width-100" />
+			</span>
+		</div>
+		</div>
+		
+	
+
+
+	<h:commandButton class="btn btn-white btn-info btn-bold"  action="#{orderBean.Superadd()}"  >
+
+			</h:commandButton>
+
+</h:form>
+</div>
+</div>
+</form>
+</div>
+</div>
+
+
+            
+  	
+  	
+  	
+
+  	
+			
+			
+			</ui:define></ui:composition>

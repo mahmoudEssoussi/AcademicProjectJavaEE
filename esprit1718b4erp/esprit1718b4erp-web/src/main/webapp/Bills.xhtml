@@ -1,0 +1,170 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                 xmlns:p="http://primefaces.org/ui"
+                 template="/template-ref/main.xhtml"
+                  xmlns:s="http://jboss.com/products/seam/taglib"
+              
+               >
+                	
+			<ui:define name="pageContent">
+			
+			<h:messages class="alert alert-info" id="message" showDetail="true"
+		autoUpdate="true" closable="true" />
+			<div class="widget-box">
+			
+			<div class="widget-header widget-header-small">
+			<h5 class="widget-title lighter">Add Bill</h5>
+			</div>
+			
+			<div class="widget-main">
+			<form class="form-search">
+			<div class="row">
+			<div class="col-xs-12 col-sm-8">
+			
+			<h:form>
+			
+			<div class="row">
+		<div class="col-xs-12 col-sm-5">
+			<span class="block input-icon input-icon-right"> Costumer/Company Name
+				<h:inputText  required="true" requiredMessage="Insert  name" value="#{billBean.bill.customer_name}" type="text" id="inputInfo" class="width-100" />
+			</span>
+		</div>
+		</div>
+		
+		
+		<div class="row">
+		<div class="col-xs-12 col-sm-5">
+			<span class="block input-icon input-icon-right"> Adress
+				<h:inputText required="true" requiredMessage="Insert  ref"  value="#{billBean.bill.billing_adress}" type="text" class="width-100" />
+			</span>
+		</div>
+		</div>
+		
+		<div class="row">
+		<div class="col-xs-12 col-sm-5">
+			<span class="block input-icon input-icon-right"> Amout
+				<h:inputText required="true" requiredMessage="Insert  ref"  value="#{billBean.bill.amount}" type="text" class="width-100" />
+			</span>
+		</div>
+		</div>
+		
+		<div class="row">
+		<div class="col-xs-12 col-sm-5">
+			<span class="block input-icon input-icon-right"> Due
+				<h:inputText required="true" requiredMessage="Insert  ref"  value="#{billBean.bill.payment_due}" type="text" class="width-100" />
+			</span>
+		</div>
+		</div>
+		
+		
+		<div class="row">
+		<div class="col-xs-12 col-sm-5">
+			<span class="block input-icon input-icon-right"> Type of payment
+				<h:inputText required="true" requiredMessage="Insert  ref"  value="#{billBean.bill.type_of_payment}" type="text" class="width-100" />
+			</span>
+		</div>
+		</div>
+		
+		
+	   <div class="row">
+	   <div class="col-xs-12 col-sm-5">
+			<span class="block input-icon input-icon-right"> Due	
+           <h:selectOneMenu value="#{billBean.bill.deputy_document}">
+   	       <f:selectItem itemValue="in" itemLabel="in" />
+   	  	<f:selectItem itemValue="out" itemLabel="out" />
+
+           </h:selectOneMenu>
+           </span>
+		</div>
+      </div>
+  
+  
+
+<div class="row">
+		<div class="col-xs-12 col-sm-5">
+			<span class="block input-icon input-icon-right">  Date
+			<p:calendar value="#{billBean.bill.bill_date}" />
+			</span>
+		</div>
+		</div>
+		
+		<div class="row">
+		<div class="col-xs-12 col-sm-5">
+			<span class="block input-icon input-icon-right"> to pay before
+			<p:calendar value="#{billBean.bill.to_pay_before}" />
+			</span>
+		</div>
+		</div>
+  
+  
+  
+       
+   			<div class="row">
+			<div class="col-xs-12 col-sm-5" >
+			<h:form>
+			<h:commandButton class="btn btn-white btn-info btn-bold"  action="#{billBean.addBill()}"  value="Save" >
+
+			</h:commandButton>
+		   	</h:form>
+			</div>
+			</div>
+			
+
+					
+  	</h:form>
+  	
+  	
+  	</div>
+	</div>
+	</form>
+	</div>
+  	
+  	</div>
+			
+			
+			
+			  	
+  	  	<div class="widget-box">
+			
+			<div class="widget-header widget-header-small">
+			<h5 class="widget-title lighter">convert Order To bill </h5>
+			</div>
+			
+			<div class="widget-main">
+			<form class="form-search">
+			<div class="row">
+			<div class="col-xs-12 col-sm-8">
+			
+			<h:form>
+			
+	
+  	
+   			 <h:selectOneMenu value="#{billBean.id}" >
+                <f:selectItems value="#{billBean.nonAffected}" var="ord"
+                               itemValue="#{ord.id}"
+                               itemLabel="#{ord.costumer}"/>
+            </h:selectOneMenu>
+  	
+
+
+
+		
+	
+
+
+	<h:commandButton class="btn btn-white btn-info btn-bold"  action="#{billBean.AffectOrder()}"  >
+
+			</h:commandButton>
+
+</h:form>
+</div>
+</div>
+</form>
+</div>
+</div>
+			
+			
+			</ui:define>
+			</ui:composition>

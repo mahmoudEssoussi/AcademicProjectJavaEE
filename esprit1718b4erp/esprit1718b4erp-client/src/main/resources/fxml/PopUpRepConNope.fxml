@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.141" fx:controller="tn.esprit.b4.esprit1718b4erp.app.client.controllers.PopUpRepConNopeController">
+   <children>
+      <Label layoutX="187.0" layoutY="315.0" prefHeight="21.0" prefWidth="104.0" text="Nope" />
+      <Label fx:id="txt_refuse" layoutX="300.0" layoutY="325.0" prefHeight="21.0" prefWidth="104.0" />
+      <ImageView fitHeight="256.0" fitWidth="323.0" layoutX="132.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/refused.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

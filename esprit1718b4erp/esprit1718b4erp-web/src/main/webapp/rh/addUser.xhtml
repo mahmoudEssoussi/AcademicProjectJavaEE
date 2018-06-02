@@ -1,0 +1,82 @@
+
+<h:form xmlns:h="http://java.sun.com/jsf/html">
+<h:panelGrid columns="2">
+
+<h:outputText value="firstname" />
+<h:inputText  value="#{EmployeeBean.firstname}"  />
+<h:outputText value="lastname" />
+<h:inputText  value="#{EmployeeBean.lastname}"  />
+<h:outputText value="login" />
+<h:inputText  value="#{EmployeeBean.login}"  />
+<h:outputText value="password" />
+<h:inputText  value="#{EmployeeBean.password}"  />
+<h:outputText value="role" />
+<h:inputText  value="#{EmployeeBean.role}"  />
+
+<h:commandButton action="#{EmployeeBean.addUser()}" value="add user" />
+<h:commandButton action="#{EmployeeBean.miseajour()}" value="Mise a jour" />
+
+
+    				<h:outputText value="AFFICHAGE DES EMPLOYES" />
+
+
+<h:dataTable value="#{EmployeeBean.users}" var="user" border="1" xmlns:h="http://xmlns.jcp.org/jsf/html"
+                                                                 xmlns:f="http://java.sun.com/jsf/core"> 
+                                                                 
+
+	<h:column>
+    		<f:facet name="header">
+    				<h:outputText value="firstname" />
+    		</f:facet>
+    		<h:outputText value="#{user.firstname}" />
+   </h:column>
+   
+   	<h:column>
+    		<f:facet name="header">
+    				<h:outputText value="lastname" />
+    		</f:facet>
+    		<h:outputText value="#{user.lastname}" />
+   </h:column>
+   
+   	<h:column>
+    		<f:facet name="header">
+    				<h:outputText value="login" />
+    		</f:facet>
+    		<h:outputText value="#{user.login}" />
+   </h:column>
+   
+   	<h:column>
+    		<f:facet name="header">
+    				<h:outputText value="password" />
+    		</f:facet>
+    		<h:outputText value="#{user.password}" />
+   </h:column>
+   	<h:column>
+    		<f:facet name="header">
+    				<h:outputText value="role" />
+    		</f:facet>
+    		<h:outputText value="#{user.role}" />
+   </h:column>
+   
+      	<h:column>
+    		<f:facet name="header">
+    				<h:outputText value="Action" />
+    		</f:facet>
+			<h:commandButton action="#{EmployeeBean.delete(user.id)}" value="supprimer" />
+   </h:column>
+   
+   
+      	<h:column>
+    		<f:facet name="header">
+    				<h:outputText value="Action" />
+    		</f:facet>
+			<h:commandButton action="#{EmployeeBean.update(user.id)}" value="mise a jour" />
+  	   </h:column>
+</h:dataTable>
+
+
+
+
+
+</h:panelGrid>
+</h:form>

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.ScatterChart?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="bill" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tn.esprit.b4.esprit1718b4erp.app.client.controllers.BillController">
+   <children>
+      <TabPane prefHeight="800.0" prefWidth="1000.0" styleClass="corner" stylesheets="@../styles/styles.css" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab fx:id="BillRecieved" text="Bill Management">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: silver;" styleClass="jfx-hamburger" stylesheets="@../styles/styles.css">
+                     <children>
+                        <Button fx:id="addbill" layoutX="118.0" layoutY="381.0" mnemonicParsing="false" onAction="#onclickbutton" prefHeight="45.0" prefWidth="128.0" styleClass="green-btn" stylesheets="@../styles/menu_principal.css" text="Save" textFill="#1a9016" />
+                        <TextField fx:id="custname" layoutX="40.0" layoutY="35.0" prefHeight="31.0" prefWidth="260.0" promptText="customer name" stylesheets="@../styles/styles.css" />
+                        <TextField fx:id="billingadresss" layoutX="40.0" layoutY="66.0" prefHeight="31.0" prefWidth="259.0" promptText="billing_adress" stylesheets="@../styles/styles.css" />
+                        <TextField fx:id="shippingadress" layoutX="40.0" layoutY="97.0" prefHeight="31.0" prefWidth="258.0" promptText="shipping_adress" stylesheets="@../styles/styles.css" />
+                        <TextField fx:id="billamount" layoutX="40.0" layoutY="128.0" prefHeight="31.0" prefWidth="257.0" promptText="amount" stylesheets="@../styles/styles.css" />
+                        <TextField fx:id="paymentdue" layoutX="40.0" layoutY="159.0" prefHeight="31.0" prefWidth="257.0" promptText="payment_due" stylesheets="@../styles/styles.css" />
+                        <DatePicker fx:id="billdate" layoutX="40.0" layoutY="190.0" prefHeight="31.0" prefWidth="258.0" promptText="bill_date" stylesheets="@../styles/styles.css" />
+                        <DatePicker fx:id="topaybefore" layoutX="40.0" layoutY="221.0" prefHeight="31.0" prefWidth="258.0" promptText="to_pay_before" stylesheets="@../styles/styles.css" />
+                        <ComboBox fx:id="typeofpay" layoutX="40.0" layoutY="252.0" prefHeight="31.0" prefWidth="256.0" promptText="type of payment" styleClass="corner" stylesheets="@../styles/styles.css" />
+                        <TableView fx:id="listbill" layoutX="362.0" layoutY="107.0" prefHeight="612.0" prefWidth="611.0" style="-fx-fixed-cell-size: 20;" stylesheets="@../styles/styles.css">
+                          <columns>
+                            <TableColumn fx:id="customername" prefWidth="75.0" text="Name" />
+                            <TableColumn fx:id="billingadress" prefWidth="75.0" text="From" />
+                              <TableColumn fx:id="shipingadress" prefWidth="75.0" text="To" />
+                              <TableColumn fx:id="amount" prefWidth="75.0" text="Amount" />
+                              <TableColumn fx:id="Due" prefWidth="75.0" text="Due" />
+                              <TableColumn fx:id="BillDate" prefWidth="75.0" text="BillDate" />
+                              <TableColumn fx:id="topaybefore1" prefWidth="103.0" text="ToPayBefore" />
+                              <TableColumn fx:id="typeofpayment" prefWidth="75.0" text="Type" />
+                              <TableColumn fx:id="inout" prefWidth="75.0" text="In/Out" />
+                          </columns>
+                        </TableView>
+                        <Button fx:id="deletebill" layoutX="119.0" layoutY="474.0" mnemonicParsing="false" onAction="#supprimer" prefHeight="51.0" prefWidth="99.0" styleClass="red-label" text="Delete" textFill="#ee0404" />
+                        <TextField fx:id="billsearch" layoutX="779.0" layoutY="35.0" promptText="Search" styleClass="search-box" />
+                        <Button fx:id="mmb" layoutX="246.0" layoutY="694.0" mnemonicParsing="false" onAction="#mmb" prefHeight="31.0" prefWidth="163.0" styleClass="green-btn" stylesheets="@../styles/styles.css" text="Refresh" />
+                        <Button fx:id="billsearsh" layoutX="118.0" layoutY="582.0" mnemonicParsing="false" onAction="#searchbill" prefHeight="47.0" prefWidth="104.0" styleClass="blue-btn" text="Update" textFill="#1d01f2" />
+                        <ComboBox fx:id="billtype" layoutX="40.0" layoutY="283.0" prefHeight="36.0" prefWidth="256.0" promptText="Bill type" styleClass="corner" stylesheets="@../styles/styles.css" />
+                        <Button fx:id="billback" layoutX="29.0" layoutY="697.0" mnemonicParsing="false" onAction="#Billback" prefHeight="31.0" prefWidth="123.0" styleClass="cancel-button" text="Back" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab fx:id="BillToSend" text="Cash-desk Management">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: silver;" stylesheets="@../styles/styles.css">
+                     <children>
+                        <TextField fx:id="caisse" layoutX="543.0" layoutY="83.0" promptText="cash-desk" styleClass="text-field" stylesheets="@../styles/styles.css" />
+                        <Label layoutX="44.0" layoutY="85.0" prefHeight="27.0" prefWidth="113.0" text="Cash-desk today" textFill="#f50303" />
+                        <TextField fx:id="datetod" layoutX="236.0" layoutY="83.0" />
+                        <Button fx:id="close" layoutX="548.0" layoutY="173.0" mnemonicParsing="false" onAction="#close" prefHeight="31.0" prefWidth="182.0" styleClass="blue-btn" stylesheets="@../styles/styles.css" text="close cash-desk" textFill="#0b43eb" />
+                        <ScatterChart fx:id="billstat" layoutX="149.0" layoutY="289.0" prefHeight="400.0" prefWidth="671.0" stylesheets="@../styles/styles.css" title="Cash-Desk evolution">
+                          <xAxis>
+                            <CategoryAxis fx:id="billx" side="BOTTOM" />
+                          </xAxis>
+                          <yAxis>
+                            <NumberAxis fx:id="billy" side="LEFT" />
+                          </yAxis>
+                        </ScatterChart>
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+            <Tab fx:id="Archive" text="Bill Archive">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: silver;" stylesheets="@../styles/styles.css">
+                     <children>
+                        <TableView fx:id="archivelist" layoutX="109.0" layoutY="181.0" prefHeight="428.0" prefWidth="850.0">
+                          <columns>
+                            <TableColumn fx:id="archname" prefWidth="75.0" text="Name" />
+                            <TableColumn fx:id="archfrom" prefWidth="75.0" text="From" />
+                              <TableColumn fx:id="archto" prefWidth="75.0" text="To" />
+                              <TableColumn fx:id="archamount" prefWidth="75.0" text="Amount" />
+                              <TableColumn fx:id="archdue" prefWidth="75.0" text="Due" />
+                              <TableColumn fx:id="archbilldate" prefWidth="99.0" text="Bill Date" />
+                              <TableColumn fx:id="archtopaybefore" prefWidth="119.0" text="ToPayBefore" />
+                              <TableColumn fx:id="archtype" prefWidth="133.0" text="Type" />
+                              <TableColumn fx:id="archinout" minWidth="0.0" prefWidth="119.0" text="In/Out" />
+                          </columns>
+                        </TableView>
+                        <Label layoutX="365.0" layoutY="44.0" prefHeight="78.0" prefWidth="309.0" stylesheets="@../styles/styles.css" text="Archive" textAlignment="CENTER">
+                           <font>
+                              <Font size="48.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>

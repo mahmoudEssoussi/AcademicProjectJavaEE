@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<StackPane fx:id="stackPane" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tn.esprit.b4.esprit1718b4erp.app.client.controllers.CongéController">
+   <children>
+      <AnchorPane id="AnchorPane" prefHeight="800.0" prefWidth="1000.0">
+         <children>
+            <Label layoutX="6.0" layoutY="14.0" prefHeight="66.0" prefWidth="384.0" text="Vacation Demand" textFill="#1b1a1a">
+               <font>
+                  <Font size="45.0" />
+               </font>
+            </Label>
+            <DatePicker fx:id="DateBEgin" layoutX="160.0" layoutY="100.0" />
+            <DatePicker fx:id="DateEnd" layoutX="160.0" layoutY="174.0" />
+            <ComboBox fx:id="txtType" layoutX="160.0" layoutY="246.0" prefHeight="31.0" prefWidth="218.0" />
+            <Label layoutX="32.0" layoutY="105.0" text="Date Begin" />
+            <Label layoutX="32.0" layoutY="179.0" text="Date End" />
+            <TextArea fx:id="txtComment" layoutX="547.0" layoutY="93.0" prefHeight="132.0" prefWidth="355.0" />
+            <Label layoutX="38.0" layoutY="251.0" text="Type" />
+            <Label layoutX="476.0" layoutY="95.0" prefHeight="21.0" prefWidth="107.0" text="Reasons" />
+            <Button fx:id="btnDemandeCongé" layoutX="567.0" layoutY="257.0" mnemonicParsing="false" onAction="#onClickDemandCongé" text="Demand" />
+            <Separator layoutX="5.0" layoutY="329.0" prefHeight="8.0" prefWidth="991.0" />
+            <Label layoutX="14.0" layoutY="346.0" prefHeight="66.0" prefWidth="573.0" text="Answer To Your Request :" textFill="#1b1a1a">
+               <font>
+                  <Font size="45.0" />
+               </font>
+            </Label>
+            <TableView fx:id="tabCongeAnswer" layoutX="200.0" layoutY="460.0" prefHeight="200.0" prefWidth="489.0">
+              <columns>
+                <TableColumn fx:id="colDateBegin" prefWidth="127.0" text="Date Begin" />
+                  <TableColumn fx:id="colDateEnd" prefWidth="98.0" text="Date End" />
+                  <TableColumn fx:id="colType" minWidth="0.0" prefWidth="106.0" text="Type" />
+                  <TableColumn fx:id="colAnswer" minWidth="1.0" prefWidth="157.0" text="Answer" />
+              </columns>
+            </TableView>
+            <Button fx:id="btnBack" layoutX="805.0" layoutY="47.0" mnemonicParsing="false" onAction="#OnCLickBack" style="-fx-background-color: #1B6CD7; -fx-background-radius: 5em; -fx-text-fill: #FFFF;" text="Back" />
+            <ImageView fitHeight="43.0" fitWidth="77.0" layoutX="856.0" layoutY="41.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/back.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="btnPopUp" layoutX="751.0" layoutY="397.0" mnemonicParsing="false" onAction="#OnClickPopUp" opacity="0.0" text="testPopUp" />
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>

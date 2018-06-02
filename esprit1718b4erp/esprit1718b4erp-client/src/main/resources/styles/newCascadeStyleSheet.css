@@ -1,0 +1,112 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 4 avr. 2018, 18:48:51
+    Author     : Mahmoud essoussi
+*/
+
+.parent{
+    -fx-background-color: #FFF;
+}
+.sidebar{
+    -fx-background-color: #333645;
+}
+.btns{
+    -fx-background-color: transparent;
+}
+.btns:hover{
+    -fx-background-color: #202332;
+}
+.box{
+    -fx-border-color: #3B3F4B;
+    -fx-border-width: 1px 0px 0px 0px;
+}
+.round-lbl{
+    -fx-background-color: #FE7A79;
+    -fx-background-radius: 100%;
+}
+.card-01{
+    -fx-background-color: rgba(0, 162, 211,0.3);
+}
+.card-02{
+    -fx-background-color: rgba(69, 183, 175,0.3);
+}
+.card-02{
+    -fx-background-color: rgba(255, 198, 108,0.3);
+}
+.round-box{
+    -fx-background-radius: 100%;
+    -fx-border-radius: 100%;
+    -fx-border-width: 5px;
+}
+
+
+
+.root{
+    -fx-background-color: #1F1F60;
+}
+
+.table-view{
+   -fx-background-color: transparent;
+}
+
+.table-view:focused{
+    -fx-background-color: transparent;
+}
+
+/* Spaltenköpfe
+    Struktur column-header-background -> column-header */
+
+.table-view .column-header-background{
+    -fx-background-color: linear-gradient(#131313 0%, #424141 100%);
+}
+
+.table-view .column-header-background .label{
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+}
+
+.table-view .column-header {
+    -fx-background-color: transparent;
+}
+
+.table-view .table-cell{
+    -fx-text-fill: white;
+}
+
+.table-row-cell{
+    -fx-background-color: -fx-table-cell-border-color, #616161;
+    -fx-background-insets: 0, 0 0 1 0;
+    -fx-padding: 0.0em; /* 0 */
+}
+
+.table-row-cell:odd{
+    -fx-background-color: -fx-table-cell-border-color, #424242;
+    -fx-background-insets: 0, 0 0 1 0;
+    -fx-padding: 0.0em; /* 0 */  
+}
+
+.table-row-cell:selected {
+    -fx-background-color: #005797;
+    -fx-background-insets: 0;
+    -fx-background-radius: 1;
+}
+
+.table-view > .virtual-flow > .scroll-bar:vertical,
+.table-view > .virtual-flow > .scroll-bar:vertical > .track,
+.table-view > .virtual-flow > .scroll-bar:vertical > .track-background, 
+.table-view > .virtual-flow > .scroll-bar:horizontal,
+.table-view > .virtual-flow > .scroll-bar:horizontal > .track,
+.table-view > .virtual-flow > .scroll-bar:horizontal > .track-background {
+    -fx-background-color: transparent;
+}
+
+
+
+.table-view > .virtual-flow > .scroll-bar > .increment-button, 
+.table-view > .virtual-flow > .scroll-bar > .decrement-button {
+    -fx-opacity: 0;
+}

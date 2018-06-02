@@ -1,0 +1,135 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	  xmlns:p="http://primefaces.org/ui"
+	
+		>
+
+
+	<html>
+<h:head>
+		<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<meta charset="utf-8" />
+		<title>Blank Page - Ace Admin</title>
+
+		<meta name="description" content="" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+		<link rel="stylesheet" href="#{request.contextPath}/resources/assets/css/bootstrap.min.css" />
+		<link rel="stylesheet" href="#{request.contextPath}/resources/assets/font-awesome/4.5.0/css/font-awesome.min.css" />
+
+		<link rel="stylesheet" href="#{request.contextPath}/resources/assets/css/fonts.googleapis.com.css" />
+
+	
+		<link rel="stylesheet" href="#{request.contextPath}/resources/assets/css/ace.min.css" class="ace-main-stylesheet" id="main-ace-style" />
+
+		<link rel="stylesheet" href="#{request.contextPath}/resources/assets/css/ace-skins.min.css" />
+		<link rel="stylesheet" href="#{request.contextPath}/resources/assets/css/ace-rtl.min.css" />
+
+		<script src="#{request.contextPath}/resources/assets/js/ace-extra.min.js"></script>
+
+	</head>
+</h:head>
+
+
+<h:body>
+<body class="no-skin" >
+				<div id="navbar" class="navbar navbar-default          ace-save-state">
+			<div class="navbar-container ace-save-state" id="navbar-container">
+				<button type="button" class="navbar-toggle menu-toggler pull-left" id="menu-toggler" data-target="#sidebar">
+					<span class="sr-only">Toggle sidebar</span>
+
+					<span class="icon-bar"></span>
+
+					<span class="icon-bar"></span>
+
+					<span class="icon-bar"></span>
+				</button>
+
+				<div class="navbar-header pull-left">
+					<a href="index.html" class="navbar-brand">
+						<small>
+							<i class="fa fa-leaf"></i>
+					 ERP finance module
+						</small>
+					</a>
+				</div>
+
+				<div class="navbar-buttons navbar-header pull-right" role="navigation">
+					<ul class="nav ace-nav" style="max-height:45px">
+					
+
+						<li class="purple dropdown-modal">
+							<a data-toggle="dropdown" class="dropdown-toggle" href="#">
+								<i class="ace-icon fa fa-bell icon-animated-bell"></i>
+								<span class="badge badge-important">#{primaryStock.nbr}</span>
+							</a>
+                              
+							<ul class="dropdown-menu-right dropdown-navbar navbar-pink dropdown-menu dropdown-caret dropdown-close">
+								<h:form >
+    								<ui:repeat value="#{primaryStock.notificationNonReaded()}" var="notif">
+								<li class="dropdown-header">
+									<i class="ace-icon fa fa-exclamation-triangle"></i>
+									#{notif.text}
+								</li>
+							</ui:repeat>
+							</h:form>
+						
+
+								<li class="dropdown-footer">
+									<a href="/esprit1718b4erp-web/Notification.jsf">
+										See all notifications
+										<i class="ace-icon fa fa-arrow-right"></i>
+									</a>
+								</li>
+							</ul>
+						</li>
+
+						
+
+						<li class="light-blue dropdown-modal">
+							<a data-toggle="dropdown" href="#" class="dropdown-toggle">
+								<img class="nav-user-photo" src="#{request.contextPath}/resources/assets/images/avatars/user.jpg" alt="Jason's Photo" />
+								<span class="user-info">
+									<small> welcome  </small>
+								#{identity.user.firstname}
+								</span>
+
+								<i class="ace-icon fa fa-caret-down"></i>
+							</a>
+
+							<ul class="user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
+								<li>
+									<a href="#">
+										<i class="ace-icon fa fa-cog"></i>
+										Settings
+									</a>
+								</li>
+
+								<li>
+									<a href="profile.html">
+										<i class="ace-icon fa fa-user"></i>
+										Profile
+									</a>
+								</li>
+
+								<li class="divider"></li>
+
+						<h:form>
+													<h:commandButton class="btn btn-info btn-sm popover-info"  action="#{identity.logout()}"  value="Logout" >
+		
+																</h:commandButton>
+					</h:form>
+						
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>  <!-- /.navbar-container -->
+		</div>
+		
+			</body>
+</h:body>
+	</html>
+</ui:composition>

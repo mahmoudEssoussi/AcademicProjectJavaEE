@@ -1,0 +1,92 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+	<html>
+<h:head>
+	<head>
+<title>Accessible Profile Widget a Responsive Widget Template ::
+	w3layouts</title>
+<link href="#{request.contextPath}/resources/profile/css/style.css"
+	rel='stylesheet' type='text/css' />
+<link href="//fonts.googleapis.com/css?family=Montserrat:400,700"
+	rel="stylesheet" />
+<link href="//fonts.googleapis.com/css?family=Roboto+Condensed:300,400"
+	rel="stylesheet" />
+<link href="#{request.contextPath}/resources/profile/css/popuo-box.css"
+	rel="stylesheet" type="text/css" media="all" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords"
+	content="Accessible Profile Widget Responsive Widget,Login form widgets, Sign up Web forms , Login signup Responsive web form,Flat Pricing table,Flat Drop downs,Registration Forms,News letter Forms,Elements" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<script src="js/jquery.min.js"></script>
+<script>$(document).ready(function(c) {
+			$('.alert-close').on('click', function(c){
+				$('.main-agile').fadeOut('slow', function(c){
+					$('.main-agile').remove();
+				});
+			});	  
+		});
+		</script>
+<style>
+#form {
+	width: 100%;
+	font-size: 36px;
+	font-weight: bold;
+	line-height: 48px;
+	color: white;
+}
+</style>
+
+
+	</head>
+	<h:body>
+		<body>
+
+			<h1>Manage vacation</h1>
+			<h:form id="form">
+				<p:growl id="msgs" showDetail="true" />
+
+				<h:panelGrid columns="2" cellpadding="5">
+					<p:outputLabel for="effect" value="date begin:"
+						style="color: white" />
+					<p:calendar id="effect" value="#{EmployeeBean.dateDebut}"
+						effect="fold" />
+					<p:outputLabel for="effect1" value="date end:" style="color: white" />
+					<p:calendar id="effect1" value="#{EmployeeBean.dateFin}"
+						effect="fold" />
+					<p:outputLabel for="console" value="Basic: " style="color: white" />
+					<p:selectOneMenu id="console" value="#{EmployeeBean.type}"
+						style="width:500px">
+						<f:selectItem itemLabel="" itemValue="" />
+						<f:selectItem itemLabel="annuel" itemValue="annuel" />
+						<f:selectItem itemLabel="maternité" itemValue="maternité" />
+						<f:selectItem itemLabel="maladie" itemValue="maladie" />
+					</p:selectOneMenu>
+					<p:outputLabel for="effect1" value="reason:" style="color: white" />
+					<h:inputTextarea rows="10" value="#{EmployeeBean.comment}"
+						cols="60"></h:inputTextarea>
+
+				</h:panelGrid>
+
+				<h:commandButton action="#{EmployeeBean.addConge()}"
+					value="add user" styleClass="ui-priority-primary" />
+				<h:form>
+					<h:commandButton action="#{identity.logout()}" value="logout" />
+				</h:form>
+
+			</h:form>
+		</body>
+	</h:body>
+</h:head>
+	</html>
+
+
+
+
+
+</ui:composition>

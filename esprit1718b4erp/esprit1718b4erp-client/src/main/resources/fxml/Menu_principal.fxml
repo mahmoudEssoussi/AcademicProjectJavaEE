@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="800.0" prefWidth="1000.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.141" fx:controller="tn.esprit.b4.esprit1718b4erp.app.client.controllers.Menu_principalController">
+    <stylesheets>
+        <URL value="@/styles/menu_principal.css" />
+    </stylesheets>
+   <children>
+      <Label layoutX="387.0" layoutY="50.0" prefHeight="47.0" prefWidth="226.0" text="Menu Principal">
+         <font>
+            <Font size="32.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

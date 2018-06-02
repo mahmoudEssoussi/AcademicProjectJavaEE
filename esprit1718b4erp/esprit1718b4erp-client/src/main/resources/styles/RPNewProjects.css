@@ -1,0 +1,26 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 7 avr. 2018, 17:27:46
+    Author     : chihi
+*/
+
+
+
+
+
+
+.column-header-background         { -fx-background-color: azure;       }
+.TeamLeader  .text                { -fx-fill: red ;}
+
+.NotTeamLeader .text               {-fx-fill: black ;}
+.table-row-cell:empty             { -fx-background-color: cornsilk;    }
+.table-row-cell:empty .table-cell { -fx-border-width:     0px;         }
+
+/*.table-row-cell:mycondition .text {
+       -fx-fill: red ;
+
+}*/

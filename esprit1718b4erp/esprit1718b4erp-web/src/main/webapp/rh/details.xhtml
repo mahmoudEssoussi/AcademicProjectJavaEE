@@ -1,0 +1,33 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	template="/template-rh/main_rh.xhtml"
+	xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:p1="http://primefaces.org/ui">
+
+	<ui:define name="pageContent">
+<!-- 		<h:form id="f"> -->
+<!-- 			<h1>#{EmployeeBean.transUser.picture}</h1> -->
+<!-- 			<p:graphicImage value="#{EmployeeBean.content}" height="10px"> -->
+<!-- 				<f:param name="id" value="#{EmployeeBean.content}" /> -->
+<!-- 			</p:graphicImage> -->
+
+<!-- 		</h:form> -->
+<li class="light-blue dropdown-modal"><a
+							data-toggle="dropdown" href="#" class="dropdown-toggle">
+							 <p:graphicImage
+									value="#{identity.imageF}" height="50px">
+									<f:param name="id" value="#{EmployeeBean.content}" />
+								</p:graphicImage> 
+								<span class="user-info"> 
+								<small> welcome </small>
+									#{EmployeeBean.transUser.firstname}
+							</span> <i class="ace-icon fa fa-caret-down"></i>
+						</a>
+
+							
+							</li>
+	</ui:define>
+</ui:composition>

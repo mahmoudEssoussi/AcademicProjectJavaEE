@@ -1,0 +1,52 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                 xmlns:p="http://primefaces.org/ui"
+                 template="/template-ref/main.xhtml"
+                  xmlns:s="http://jboss.com/products/seam/taglib"
+              
+               >
+                	
+			<ui:define name="pageContent">
+			
+						
+			
+			 <table id="simple-table" class="table  table-bordered table-hover">
+											<thead>
+												<tr>
+												<th >Cash-desk</th>
+												<th >Date</th>	
+													
+													
+												</tr>
+											</thead>
+						<tbody>					
+				
+							<ui:repeat value="#{caisseBean.firas()}" var="pp">
+					<tr>
+						<td>#{pp.somme_caisse}</td>
+						<td>#{pp.date}</td>
+				
+						
+						
+						
+					
+						
+		</tr>
+						
+						
+						
+						
+						
+						
+</ui:repeat>
+				
+				</tbody>
+											
+											
+</table>
+			
+			
+			
+			</ui:define></ui:composition>

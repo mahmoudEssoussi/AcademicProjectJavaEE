@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tn.esprit.b4.esprit1718b4erp.app.client.controllers.RPConsultProjectsController">
+    <stylesheets>
+        <URL value="@/styles/rpconsultprojects.css" />
+    </stylesheets>
+   <children>
+      <TextField fx:id="searchTextField" layoutX="152.0" layoutY="55.0" prefHeight="27.0" prefWidth="298.0" />
+      <Label layoutX="7.0" layoutY="101.0" text="Created By:" />
+      <Label fx:id="CreatedBy" layoutX="89.0" layoutY="101.0" prefHeight="17.0" prefWidth="155.0" />
+      <Label layoutX="252.0" layoutY="101.0" text="Date/ Time created:" />
+      <Label fx:id="DtaeCreated" layoutX="385.0" layoutY="101.0" prefHeight="17.0" prefWidth="209.0" />
+      <Label layoutX="14.0" layoutY="60.0" text="Project name/id:" />
+      <Button fx:id="Details" layoutX="501.0" layoutY="55.0" mnemonicParsing="false" onAction="#onDetails_Click" text="Details" />
+      <SplitPane dividerPositions="0.006688963210702341" layoutX="1.0" layoutY="136.0" prefHeight="263.0" prefWidth="600.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="248.0" prefWidth="509.0">
+               <children>
+                  <Label layoutY="6.0" text="Note List" />
+                  <TableView fx:id="TableListNote" layoutX="-20.0" layoutY="32.0" prefHeight="231.0" prefWidth="610.0">
+                    <columns>
+                      <TableColumn fx:id="TaskNameColomb" prefWidth="111.0" text="Task Name" />
+                      <TableColumn fx:id="CreatedByColomb" prefWidth="112.0" text="Created By" />
+                        <TableColumn fx:id="DateCreatedColomb" prefWidth="137.0" text="Date Created" />
+                        <TableColumn fx:id="PreviewNoteColomb" prefWidth="249.0" text="Preview Note" />
+                    </columns>
+                  </TableView>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="312.0" prefWidth="773.0">
+               <children>
+                  <Label layoutX="14.0" layoutY="6.0" text="task List" />
+                  <TableView fx:id="TableListTask" layoutX="-2.0" layoutY="31.0" prefHeight="231.0" prefWidth="599.0">
+                    <columns>
+                      <TableColumn fx:id="taskName" prefWidth="109.18372821807861" text="Task Name" />
+                      <TableColumn fx:id="TaskType" prefWidth="98.54117584228516" text="Task Type" />
+                        <TableColumn fx:id="AssignedTo" prefWidth="123.009033203125" text="Assigned To" />
+                        <TableColumn fx:id="AssignedDate" prefWidth="171.78012084960938" text="Assigned Date" />
+                        <TableColumn fx:id="DeadLine" prefWidth="159.634765625" text="DeadLine" />
+                        <TableColumn fx:id="Status" minWidth="0.0" prefWidth="125.27313232421875" text="Status" />
+                    </columns>
+                  </TableView>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+      <Button layoutX="500.0" layoutY="14.0" mnemonicParsing="false" onAction="#BackClick" prefHeight="27.0" prefWidth="61.0" text="Back" />
+   </children>
+</AnchorPane>

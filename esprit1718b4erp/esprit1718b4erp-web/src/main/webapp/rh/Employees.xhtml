@@ -1,0 +1,80 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	template="/template-rh/main_rh.xhtml"
+	xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:p1="http://primefaces.org/ui">
+
+	<ui:define name="pageContent">
+
+		<h:form id="form">
+
+
+
+
+			<table id="simple-table" class="table  table-bordered table-hover">
+				<thead>
+
+					<tr>
+						<th></th>
+						<th>ID</th>
+						<th>First Name</th>
+						<th>Last Name</th>
+						<th>Email</th>
+						<th>DOB</th>
+						<th>Phone number</th>
+						<th>Nationality</th>
+						<th>Gender</th>
+						<th>Marital Status</th>
+						<th>Cost hour</th>
+						<th>Picture</th>
+					</tr>
+
+				</thead>
+				<tbody>
+
+					<ui:repeat value="#{EmployeeBean.listemployee}" var="user">
+
+
+
+						<tr>
+							<td class="center"><label class="pos-rel"> <input
+									type="checkbox" class="ace" /> <span class="lbl"></span>
+							</label></td>
+
+							<td>#{user.cin}</td>
+							<td>#{user.firstname}</td>
+							<td>#{user.lastname}</td>
+							<td>#{user.email}</td>
+							<td>#{user.date_birth}</td>
+							<td>#{user.phone_number}</td>
+							<td>#{user.nationality}</td>
+							<td>#{user.gender}</td>
+							<td>#{user.marital_status}</td>
+							<td>#{user.cost_h}</td>
+							<td>#{user.role}</td>
+							<td><h:commandButton
+									class="width-35 pull-right btn btn-sm btn-primary"
+									action="#{EmployeeBean.MoreDetails(user)}" 
+									value="details">
+																		
+								</h:commandButton>
+								</td>
+
+
+						</tr>
+
+					</ui:repeat>
+				</tbody>
+			</table>
+
+
+
+
+
+		</h:form>
+
+	</ui:define>
+</ui:composition>

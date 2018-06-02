@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tn.esprit.b4.esprit1718b4erp.app.client.controllers.PopUpUpdateUserController">
+   <children>
+      <TextField fx:id="IdTxt" layoutX="176.0" layoutY="44.0" promptText="ID" />
+      <TextField fx:id="FrstnaemTxt" layoutX="176.0" layoutY="75.0" promptText="First Name" />
+      <TextField fx:id="LastNameTxt" layoutX="176.0" layoutY="106.0" promptText="Last Name" />
+      <TextField fx:id="EmailTxt" layoutX="176.0" layoutY="137.0" promptText="Email Adress" />
+      <TextField fx:id="phoneNumberTxt" layoutX="176.0" layoutY="168.0" promptText="Phone Number" />
+      <Button layoutX="509.0" layoutY="355.0" mnemonicParsing="false" onAction="#DoneUpade" text="Done" />
+      <TextField fx:id="NatinnalityTxt" layoutX="176.0" layoutY="199.0" promptText="Nationnality" />
+      <DatePicker fx:id="datepicker" layoutX="176.0" layoutY="230.0" prefHeight="31.0" prefWidth="187.0" />
+      <TextField fx:id="CostHourtxt" layoutX="176.0" layoutY="261.0" promptText="cost of hour" />
+      <ComboBox fx:id="COmboGender" layoutX="176.0" layoutY="292.0" prefHeight="31.0" prefWidth="187.0" />
+      <Label layoutX="66.0" layoutY="49.0" text="ID" />
+      <Label layoutX="67.0" layoutY="204.0" text="Nationnality" />
+      <Label layoutX="69.0" layoutY="235.0" text="DOB" />
+      <Label layoutX="66.0" layoutY="266.0" text="Cost of hour" />
+      <Label layoutX="67.0" layoutY="297.0" text="Gender" />
+      <Label layoutX="66.0" layoutY="173.0" text="Phone Number" />
+      <Label layoutX="66.0" layoutY="142.0" text="Email" />
+      <Label layoutX="66.0" layoutY="80.0" text="First Name" />
+      <Label layoutX="67.0" layoutY="111.0" text="Last Name" />
+      <ComboBox fx:id="ComboMarital" layoutX="176.0" layoutY="323.0" prefHeight="31.0" prefWidth="187.0" />
+      <Label layoutX="67.0" layoutY="328.0" text="Marital Status" />
+   </children>
+</AnchorPane>

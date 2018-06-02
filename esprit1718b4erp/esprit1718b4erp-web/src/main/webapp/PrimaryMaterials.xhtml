@@ -1,0 +1,84 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                 xmlns:p="http://primefaces.org/ui"
+                 template="/template-ref/main.xhtml"
+                 xmlns:p1="http://primefaces.org/ui">
+                	
+			<ui:define name="pageContent">
+			
+			
+			
+			 <table id="simple-table" class="table  table-bordered table-hover">
+											<thead>
+												<tr>
+													<th>  </th>
+													<th >name</th>
+													<th>reference</th>
+												
+													<th>unit Price</th>
+													<th>stock Price</th>
+													<th >Initial Stock</th>
+													<th >in Stock</th>
+													<th >Out Stock</th>
+													<th >Final Stock</th>
+													<th>Operation</th>
+												</tr>
+											</thead>
+						<tbody>					
+					<ui:repeat value="#{primaryStock.displayallPms()}" var="pp">
+							
+												<tr>
+													<td class="center">
+														<label class="pos-rel">
+															<input type="checkbox" class="ace" />
+															<span class="lbl"></span>
+														</label>
+													</td>
+
+
+						<td>#{pp.itemName}</td>
+						<td>#{pp.ref}</td>
+						
+						<td>#{pp.unitPrice}</td>
+						<td>#{pp.stockPrice}</td>
+						<td>#{pp.initialStock}</td>
+						<td>#{pp.stockIn}</td>
+						<td>#{pp.stockOut}</td>
+						<td>#{pp.finalStock}</td>
+					
+						
+						<td>
+					<h:form>
+						<h:commandButton action="#{primaryStock.delete(pp)}"  value="delete" class="btn btn-xs btn-danger" >
+						
+						</h:commandButton>
+						
+					
+					</h:form>
+					
+					<h:form>
+						<h:commandButton action="#{primaryStock.delete(pp)}"  value="Modify" class="btn btn-xs btn-danger" >
+						
+						</h:commandButton>
+						
+					
+					</h:form>
+					
+						</td>
+					
+						
+						</tr>
+						
+
+				</ui:repeat>
+				</tbody>
+											
+											
+</table>
+					
+  
+    
+			</ui:define>
+</ui:composition>

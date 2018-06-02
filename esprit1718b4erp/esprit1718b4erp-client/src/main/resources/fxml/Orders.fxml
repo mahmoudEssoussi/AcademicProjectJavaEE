@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="800.0" prefWidth="1000.0" stylesheets="@../styles/newCascadeStyleSheet.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tn.esprit.b4.esprit1718b4erp.app.client.controllers.OrdersController">
+   <children>
+      <ImageView fitHeight="800.0" fitWidth="1000.0">
+         <image>
+            <Image url="@../images/60.jpg" />
+         </image>
+      </ImageView>
+      <VBox layoutX="14.0" layoutY="114.0" prefHeight="194.0" prefWidth="263.0">
+         <children>
+            <TextField fx:id="Costumer" prefHeight="33.0" prefWidth="263.0" promptText="Costumer" />
+            <TextField fx:id="adress" prefHeight="33.0" prefWidth="263.0" promptText="Adress" />
+            <TextField fx:id="ShippedDate" prefHeight="33.0" prefWidth="263.0" promptText="Shipped Date" />
+            <TextField fx:id="shippingCost" prefHeight="33.0" prefWidth="263.0" promptText="Cost of shipping " />
+            <TextField fx:id="ProductQuantity" prefHeight="33.0" prefWidth="263.0" promptText="Quatity Of Product" />
+            <DatePicker fx:id="shippedDate" prefHeight="31.0" prefWidth="263.0" />
+         </children>
+      </VBox>
+      <Button fx:id="Save" layoutX="14.0" layoutY="325.0" mnemonicParsing="false" onAction="#SaveProduct" prefHeight="25.0" prefWidth="120.0" text="Save Order" />
+      <Button fx:id="Add" layoutX="710.0" layoutY="337.0" mnemonicParsing="false" onAction="#AddPM" prefHeight="25.0" prefWidth="263.0" text="Add Product To aOrder" />
+      <Button fx:id="Delete" layoutX="158.0" layoutY="325.0" mnemonicParsing="false" onAction="#DeleteProduct" prefHeight="25.0" prefWidth="120.0" text="Delete Order" />
+      <TableView fx:id="OrderTable" layoutX="14.0" layoutY="454.0" prefHeight="302.0" prefWidth="783.0">
+         <columns>
+            <TableColumn fx:id="TCostumer" prefWidth="70.0" text="Costumer" />
+            <TableColumn fx:id="Tadresse" prefWidth="275.0" text="Adresse" />
+            <TableColumn fx:id="TorderDate" prefWidth="74.0" text="Order Date" />
+            <TableColumn fx:id="TshippedDate" prefWidth="86.0" text="Shipped Date" />
+            <TableColumn fx:id="TsCost" prefWidth="119.0" text="Cost  Of Shipping " />
+            <TableColumn fx:id="TuCost" prefWidth="95.0" text="Unit Cost" />
+            <TableColumn fx:id="Tquantity" prefWidth="70.0" text="Quantity" />
+         </columns>
+      </TableView>
+      <Button fx:id="LoasPtable" layoutX="828.0" layoutY="472.0" mnemonicParsing="false" onAction="#LoasPtable" prefHeight="25.0" prefWidth="149.0" text="Load Table" />
+      <Button fx:id="know" layoutX="828.0" layoutY="558.0" mnemonicParsing="false" onAction="#know" prefHeight="25.0" prefWidth="149.0" text="Know Products" />
+      <Button fx:id="export" layoutX="828.0" layoutY="516.0" mnemonicParsing="false" onAction="#export" prefHeight="25.0" prefWidth="149.0" text="Export To excel" />
+      <Button fx:id="update" layoutX="248.0" layoutY="375.0" mnemonicParsing="false" onAction="#update" prefHeight="25.0" prefWidth="120.0" text="Update Order" />
+      <TableView fx:id="ProductTable" layoutX="602.0" layoutY="129.0" prefHeight="200.0" prefWidth="373.0">
+         <columns>
+            <TableColumn fx:id="Pname" prefWidth="81.0" text="Name " />
+            <TableColumn fx:id="Pref" prefWidth="89.0" text="ref" />
+            <TableColumn fx:id="AvailbaleStock" prefWidth="107.0" text="available Stock" />
+            <TableColumn fx:id="unitPricee" prefWidth="107.0" text="Unit Price" />
+         </columns>
+      </TableView>
+      <TextField fx:id="quantity" layoutX="607.0" layoutY="337.0" prefHeight="25.0" prefWidth="84.0" promptText="quantity" />
+      <Button fx:id="LoadTableProduct" layoutX="600.0" layoutY="89.0" mnemonicParsing="false" onAction="#LoadTableProduct" prefHeight="25.0" prefWidth="373.0" text="Load Informations Products  Materials" />
+      <Button fx:id="Back" layoutX="893.0" layoutY="22.0" mnemonicParsing="false" onAction="#Back" prefHeight="25.0" prefWidth="56.0" text="Back" />
+      <Text fill="#fffdfd" fontSmoothingType="LCD" layoutX="29.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Order Management" textAlignment="JUSTIFY" wrappingWidth="219.13671875">
+         <font>
+            <Font size="31.0" />
+         </font>
+      </Text>
+      <ComboBox fx:id="combobox" layoutX="14.0" layoutY="375.0" prefHeight="25.0" prefWidth="120.0" />
+      <TextField fx:id="newEntry" layoutX="139.0" layoutY="371.0" prefHeight="33.0" prefWidth="103.0" promptText="New Entry" styleClass="card-01" />
+   </children>
+</AnchorPane>

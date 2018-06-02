@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="800.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tn.esprit.b4.esprit1718b4erp.app.client.controllers.EspaceRFController">
+   <children>
+      <ImageView fitHeight="800.0" fitWidth="1002.0" layoutY="-2.0">
+         <image>
+            <Image url="/images/10.jpg" />
+         </image>
+      </ImageView>
+      <Button fx:id="PSM" defaultButton="true" layoutX="690.0" layoutY="65.0" mnemonicParsing="false" onAction="#onClickPSM" prefHeight="21.0" prefWidth="265.0" text="Primary Stock management" textFill="#5f7879">
+         <font>
+            <Font size="19.0" />
+         </font></Button>
+      <Button fx:id="ProductManagement" defaultButton="true" layoutX="690.0" layoutY="139.0" mnemonicParsing="false" onAction="#ProductManagement" prefHeight="30.0" prefWidth="265.0" text="Product Managment" textFill="#3a3c3c">
+         <font>
+            <Font size="19.0" />
+         </font></Button>
+      <Button fx:id="OrderManagment" defaultButton="true" layoutX="690.0" layoutY="220.0" mnemonicParsing="false" onAction="#OrderManagment" prefHeight="42.0" prefWidth="265.0" text="Order Managment" textFill="#303132">
+         <font>
+            <Font size="19.0" />
+         </font></Button>
+      <Button fx:id="bill" defaultButton="true" layoutX="690.0" layoutY="295.0" mnemonicParsing="false" onAction="#bill" prefHeight="22.0" prefWidth="265.0" text="Bill &amp; Inventory">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

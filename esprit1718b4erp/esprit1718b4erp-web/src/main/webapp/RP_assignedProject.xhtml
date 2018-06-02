@@ -1,0 +1,365 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                 xmlns:p="http://primefaces.org/ui"
+                 
+                 xmlns:p1="http://primefaces.org/ui">
+                 
+                 
+                 
+                 <html>
+<h:head>
+		
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<meta charset="utf-8" />
+		<title>Blank Page - Ace Admin</title>
+
+		<meta name="description" content="" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+		<link rel="stylesheet" href="#{request.contextPath}/resources/assets/css/bootstrap.min.css" />
+		<link rel="stylesheet" href="#{request.contextPath}/resources/assets/font-awesome/4.5.0/css/font-awesome.min.css" />
+
+		<link rel="stylesheet" href="#{request.contextPath}/resources/assets/css/fonts.googleapis.com.css" />
+
+	
+		<link rel="stylesheet" href="#{request.contextPath}/resources/assets/css/ace.min.css" class="ace-main-stylesheet" id="main-ace-style" />
+
+		<link rel="stylesheet" href="#{request.contextPath}/resources/assets/css/ace-skins.min.css" />
+		<link rel="stylesheet" href="#{request.contextPath}/resources/assets/css/ace-rtl.min.css" />
+
+		<script src="#{request.contextPath}/resources/assets/js/ace-extra.min.js"></script>
+
+	
+</h:head>
+
+
+
+<h:body class="no-skin" >
+				<div id="navbar" class="navbar navbar-default          ace-save-state">
+			<div class="navbar-container ace-save-state" id="navbar-container">
+				<button type="button" class="navbar-toggle menu-toggler pull-left" id="menu-toggler" data-target="#sidebar">
+					<span class="sr-only">Toggle sidebar</span>
+
+					<span class="icon-bar"></span>
+
+					<span class="icon-bar"></span>
+
+					<span class="icon-bar"></span>
+				</button>
+
+				<div class="navbar-header pull-left">
+					<a href="index.html" class="navbar-brand">
+						<small>
+							<i class="fa fa-leaf"></i>
+					 ERP Project Management
+						</small>
+					</a>
+				</div>
+
+				<div class="navbar-buttons navbar-header pull-right" role="navigation">
+					<ul class="nav ace-nav" style="max-height:45px">
+					
+
+						<li class="purple dropdown-modal">
+							<a data-toggle="dropdown" class="dropdown-toggle" href="#">
+								<i class="ace-icon fa fa-bell icon-animated-bell"></i>
+								<span class="badge badge-important">0</span>
+							</a>
+
+							<ul class="dropdown-menu-right dropdown-navbar navbar-pink dropdown-menu dropdown-caret dropdown-close">
+								<li class="dropdown-header">
+									<i class="ace-icon fa fa-exclamation-triangle"></i>
+									
+								</li>
+
+						
+
+								<li class="dropdown-footer">
+									<a href="#">
+										See all notifications
+										<i class="ace-icon fa fa-arrow-right"></i>
+									</a>
+								</li>
+							</ul>
+						</li>
+
+						
+
+						<li class="light-blue dropdown-modal">
+							<a data-toggle="dropdown" href="#" class="dropdown-toggle">
+								<img class="nav-user-photo" src="#{request.contextPath}/resources/assets/images/avatars/user.jpg" alt="Jason's Photo" />
+								<span class="user-info">
+									<small> welcome  </small>
+								#{identity.user.firstname}
+								</span>
+
+								<i class="ace-icon fa fa-caret-down"></i>
+							</a>
+
+							<ul class="user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
+								<li>
+									<a href="#">
+										<i class="ace-icon fa fa-cog"></i>
+										Settings
+									</a>
+								</li>
+
+								<li>
+									<a href="profile.html">
+										<i class="ace-icon fa fa-user"></i>
+										Profile
+									</a>
+								</li>
+
+								<li class="divider"></li>
+
+						<h:form>
+													<h:commandButton class="btn btn-info btn-sm popover-info"  action="#{identity.logout()}"  value="Logout" >
+		
+																</h:commandButton>
+					</h:form>
+						
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>  <!-- /.navbar-container -->
+		</div>
+		
+		
+		<div class="main-container ace-save-state" id="main-container">
+			
+		
+			<div id="sidebar" class="sidebar                  responsive                    ace-save-state">
+				<script type="text/javascript">
+					try{ace.settings.loadState('sidebar')}catch(e){}
+				</script>
+
+
+				<ul class="nav nav-list">
+					<li class="">
+						<a href="/esprit1718b4erp-web/RES_PRO.jsf">
+							<i class="menu-icon fa fa-tachometer"></i>
+							<span class="menu-text"> Dashboard </span>
+						</a>
+
+						<b class="arrow"></b>
+					</li>
+							<li class="active open">
+						<a href="#" class="dropdown-toggle">
+							<i class="menu-icon fa fa-list"></i>
+							<span class="menu-text"> Project Managment </span>
+
+							<b class="arrow fa fa-angle-down"></b>
+						</a>
+
+						<b class="arrow"></b>
+
+						<ul class="submenu">
+							<li class="">
+								<a href="/esprit1718b4erp-web/RP_AddProject.jsf">
+									<i class="menu-icon fa fa-caret-right"></i>
+								Add Project
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+
+							<li class="">
+							<a href="/esprit1718b4erp-web/RP_assignedProject.jsf">
+									<i class="menu-icon fa fa-caret-right"></i>
+								show Assigned Project
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+						</ul>
+					</li>
+					
+				
+						<!--  	<li class="active open">
+						<a href="#" class="dropdown-toggle">
+							<i class="menu-icon fa fa-list"></i>
+							<span class="menu-text"> Product Management </span>
+
+							<b class="arrow fa fa-angle-down"></b>
+						</a>
+
+						<b class="arrow"></b>
+
+						<ul class="submenu">
+							<li class="">
+								<a href="/esprit1718b4erp-web/productOperation.jsf">
+									<i class="menu-icon fa fa-caret-right"></i>
+								Add Product
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+
+							<li class="">
+								<a href="/esprit1718b4erp-web/Product.jsf">
+									<i class="menu-icon fa fa-caret-right"></i>
+								show All Product
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+						</ul>
+					</li>
+					
+				-->
+				</ul><!-- /.nav-list -->
+
+				<div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">
+					<i id="sidebar-toggle-icon" class="ace-icon fa fa-angle-double-left ace-save-state" data-icon1="ace-icon fa fa-angle-double-left" data-icon2="ace-icon fa fa-angle-double-right"></i>
+				</div>
+			</div>
+	
+		<div class="main-content">
+				<div class="main-content-inner">
+					
+
+					<div class="page-content">
+					
+
+						<div class="row">
+							<div class="col-xs-12">
+								<!-- PAGE CONTENT BEGINS -->
+
+
+	          
+
+                  <table id="table-newProject" class="table  table-bordered table-hover">
+											<thead>
+												<tr>
+													
+													<th >Project name</th>
+													<th>Projact identity</th>
+													<th>Planned Stat Date</th>
+													<th>DeadLine</th>
+													<th>Status</th>
+												
+												</tr>
+											</thead>
+						<tbody>
+						<h:form>
+						<ui:repeat value="#{rP_ProjectBean.assignedProjects}" var="project" >
+						<tr >
+						<td>#{project.nomProjet}</td>
+						<td>#{project.identifiantProjet}</td>
+						<td>#{project.plannedStartDate}</td>
+						<td>#{project.plannedEndDate}</td>
+						<td>#{project.status}</td>
+						
+						<td>
+						<div class="row">
+			            <div class="col-xs-12 col-sm-5" >
+						
+                        <h:commandButton action="#{rP_ProjectBean.updateProject(project)}" value="update" />
+                        </div>
+                        </div>
+						</td>
+						
+						<td>
+						<div class="row">
+			            <div class="col-xs-12 col-sm-5" >
+						
+                        <h:commandButton action="#{rP_ProjectBean.consultProject(project)}" value="consult" />
+                        </div>
+                        </div>
+						</td>
+					
+					
+                         
+						
+						
+						
+                   
+						
+                        
+                        
+					
+						</tr>
+						</ui:repeat>	
+						</h:form>				
+						</tbody>
+						</table>
+						
+
+			
+
+
+
+
+
+
+
+
+
+								<!-- PAGE CONTENT ENDS -->
+							</div><!-- /.col -->
+						</div><!-- /.row -->
+					</div><!-- /.page-content -->
+				</div>
+			</div><!-- /.main-content -->
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+		
+		
+			<div class="footer">
+				<div class="footer-inner">
+					<div class="footer-content">
+						<span class="bigger-120">
+							<span class="blue bolder">Ace</span>
+							Application 2013-2014
+						</span>
+
+				
+						<span class="action-buttons">
+							<a href="#">
+								<i class="ace-icon fa fa-twitter-square light-blue bigger-150"></i>
+							</a>
+
+							<a href="#">
+								<i class="ace-icon fa fa-facebook-square text-primary bigger-150"></i>
+							</a>
+
+							<a href="#">
+								<i class="ace-icon fa fa-rss-square orange bigger-150"></i>
+							</a>
+						</span>
+					</div>
+				</div>
+			</div>
+
+			<a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
+				<i class="ace-icon fa fa-angle-double-up icon-only bigger-110"></i>
+			</a>
+
+	</div>
+	
+		
+			
+</h:body>
+	</html>
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+         
+</ui:composition>

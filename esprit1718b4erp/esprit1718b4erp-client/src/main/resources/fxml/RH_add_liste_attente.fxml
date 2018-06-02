@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+
+<StackPane fx:id="stackPane" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tn.esprit.b4.esprit1718b4erp.app.client.controllers.RH_add_liste_attenteController">
+   <children>
+      <AnchorPane id="AnchorPane" prefHeight="800.0" prefWidth="1000.0">
+         <children>
+            <Button fx:id="browseButton" layoutX="641.0" layoutY="405.0" mnemonicParsing="false" onAction="#OnClickBrows" text="Browse" />
+            <TextField fx:id="txt_first_name" layoutX="103.0" layoutY="235.0" promptText="First Name" />
+            <TextField fx:id="txt_last_name" layoutX="103.0" layoutY="293.0" promptText="Last Name" />
+            <TextField fx:id="txt_cin" layoutX="103.0" layoutY="405.0" promptText="ID" />
+            <TextField fx:id="txt_phone" layoutX="425.0" layoutY="235.0" promptText="Phone Number" />
+            <TextField fx:id="txt_email" layoutX="103.0" layoutY="353.0" promptText="Email address" />
+            <DatePicker fx:id="txt_dob" layoutX="425.0" layoutY="353.0" prefHeight="31.0" prefWidth="187.0" />
+            <Button fx:id="btn_add" layoutX="825.0" layoutY="405.0" mnemonicParsing="false" onAction="#on_btn_add_clicked" prefHeight="31.0" prefWidth="127.0" style="-fx-background-color: #1B6CD7; -fx-background-radius: 5em; -fx-text-fill: #FFFF;" text="Browse &amp; Add" />
+            <ComboBox fx:id="gender" layoutX="425.0" layoutY="405.0" prefHeight="31.0" prefWidth="187.0" />
+            <ImageView fitHeight="163.0" fitWidth="1000.0" layoutY="1.0" pickOnBounds="true">
+               <image>
+                  <Image url="/images/hr_1.png" />
+               </image>
+            </ImageView>
+            <Label layoutY="240.0" text="First Name" />
+            <Label layoutX="1.0" layoutY="298.0" text="Last Name" />
+            <Label layoutX="1.0" layoutY="358.0" text="Email address" />
+            <Label layoutX="1.0" layoutY="410.0" text="ID" />
+            <Label layoutX="312.0" layoutY="410.0" text="Gender" />
+            <Label layoutX="316.0" layoutY="358.0" text="Date of Birth" />
+            <Label layoutX="316.0" layoutY="240.0" text="Phone Number" />
+            <ComboBox fx:id="maritalStatus" layoutX="738.0" layoutY="235.0" prefHeight="31.0" prefWidth="187.0" />
+            <TextField fx:id="txt_nationnality" layoutX="425.0" layoutY="293.0" promptText="Nationnality" />
+            <Label layoutX="316.0" layoutY="298.0" text="Nationality" />
+            <Label layoutX="629.0" layoutY="240.0" text="Marital Status" />
+            <TextArea fx:id="comment" layoutX="738.0" layoutY="269.0" prefHeight="65.0" prefWidth="219.0" />
+            <Label layoutX="629.0" layoutY="288.0" text="Comment" />
+            <Separator layoutX="9.0" layoutY="454.0" prefHeight="0.0" prefWidth="985.0" />
+            <ComboBox fx:id="disponibility" layoutX="743.0" layoutY="353.0" prefHeight="31.0" prefWidth="143.0" />
+            <Label layoutX="642.0" layoutY="324.0" text="Disponibility" />
+            <TableView fx:id="tabViewUser" layoutX="-2.0" layoutY="500.0" prefHeight="226.0" prefWidth="1000.0">
+              <columns>
+                <TableColumn fx:id="colID" prefWidth="75.0" text="ID" />
+                <TableColumn fx:id="colFirstName" prefWidth="89.0" text="First Name" />
+                  <TableColumn fx:id="coLastName" prefWidth="83.0" text="Last Name" />
+                  <TableColumn fx:id="colEmail" prefWidth="71.0" text="Email" />
+                  <TableColumn fx:id="colDOB" prefWidth="57.0" text="DOB" />
+                  <TableColumn fx:id="colPhoneNumber" prefWidth="117.0" text="Phone number" />
+                  <TableColumn fx:id="colNationality" prefWidth="90.0" text="Nationality" />
+                  <TableColumn fx:id="colGender" prefWidth="72.0" text="Gender" />
+                  <TableColumn fx:id="colMaritalStatus" prefWidth="116.0" text="Marital Status" />
+                  <TableColumn fx:id="colWorkingH" minWidth="4.0" prefWidth="124.0" text="working hour" />
+                  <TableColumn fx:id="colCostH" prefWidth="105.0" text="hour cost" />
+              </columns>
+            </TableView>
+            <Button fx:id="btn_back" layoutX="879.0" layoutY="190.0" mnemonicParsing="false" onAction="#on_btn_back_clicked" prefHeight="31.0" prefWidth="73.0" style="-fx-background-color: #1B6CD7; -fx-background-radius: 5em; -fx-text-fill: #FFFF;" text="Back" />
+            <ImageView fitHeight="57.0" fitWidth="73.0" layoutX="952.0" layoutY="392.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="/images/add_db.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="57.0" fitWidth="73.0" layoutX="952.0" layoutY="177.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="/images/back.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="btn_add1" layoutX="556.0" layoutY="738.0" mnemonicParsing="false" onAction="#RemoveUseronClicked" prefHeight="31.0" prefWidth="127.0" style="-fx-background-color: #1B6CD7; -fx-background-radius: 5em; -fx-text-fill: #FFFF;" text="Remove" />
+            <ImageView fitHeight="57.0" fitWidth="73.0" layoutX="683.0" layoutY="725.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="/images/delete.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="btn_Update" layoutX="768.0" layoutY="738.0" mnemonicParsing="false" onAction="#Update_Button" prefHeight="31.0" prefWidth="127.0" style="-fx-background-color: #1B6CD7; -fx-background-radius: 5em; -fx-text-fill: #FFFF;" text="Update" />
+            <ImageView fitHeight="57.0" fitWidth="73.0" layoutX="892.0" layoutY="725.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="/images/update.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="775.0" layoutY="410.0" text="Photo" />
+            <Button fx:id="btn_Refraiche" layoutX="354.0" layoutY="738.0" mnemonicParsing="false" onAction="#OncLick_refraiche" prefHeight="31.0" prefWidth="127.0" style="-fx-background-color: #1B6CD7; -fx-background-radius: 5em; -fx-text-fill: #FFFF;" text="Relaod" />
+            <ImageView fitHeight="57.0" fitWidth="73.0" layoutX="478.0" layoutY="725.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/icons8_Synchronize_50px.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>

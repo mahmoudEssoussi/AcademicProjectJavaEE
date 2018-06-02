@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.ScatterChart?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="800.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tn.esprit.b4.esprit1718b4erp.app.client.controllers.CourvesRHController">
+   <children>
+      <ScatterChart fx:id="StatCongé" layoutX="-3.0" layoutY="48.0" prefHeight="380.0" prefWidth="981.0">
+        <xAxis>
+          <CategoryAxis label="Employee" side="BOTTOM" fx:id="x" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis fx:id="y" label="Salary" side="LEFT" />
+        </yAxis>
+      </ScatterChart>
+      <BarChart fx:id="barchar" layoutX="6.0" layoutY="444.0" prefHeight="360.0" prefWidth="981.0">
+        <xAxis>
+          <CategoryAxis side="BOTTOM" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis side="LEFT" />
+        </yAxis>
+      </BarChart>
+      <Button fx:id="backButton" layoutX="849.0" layoutY="14.0" mnemonicParsing="false" onAction="#OnCLickBack" text="Back" />
+   </children>
+</AnchorPane>

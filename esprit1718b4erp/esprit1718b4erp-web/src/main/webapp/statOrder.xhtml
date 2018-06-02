@@ -1,0 +1,93 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                 xmlns:p="http://primefaces.org/ui"
+                 template="/template-ref/main.xhtml"
+                  xmlns:s="http://jboss.com/products/seam/taglib"
+              
+               >
+                	
+			<ui:define name="pageContent">
+			
+			#{orderBean.o.sellingPriceUnit}
+			#{orderBean.o.unitSellingPrice}
+		
+			
+			
+			
+		
+				<div id="piechart" style="width: 900px; height: 500px;"></div>
+				<div id="piechart2" style="width: 900px; height: 500px;"></div>
+			
+				
+	
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+		var gain=#{orderBean.o.sellingPriceUnit} - #{orderBean.o.unitSellingPrice} ;
+        var data = google.visualization.arrayToDataTable([
+          ['Task', ''],
+          ['gain', gain ],
+          ['Cost ',  #{orderBean.o.unitSellingPrice}	  ],
+     
+       
+        ]);
+
+        var options = {
+          title: 'Cost and profit by Unit : #{orderBean.o.costumer} '
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+        chart.draw(data, options);
+      }
+    </script>
+	
+	
+	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+		var gain=(#{orderBean.o.sellingPriceUnit} - #{orderBean.o.unitSellingPrice})*#{orderBean.o.quantity} ;
+		var Cost= #{orderBean.o.unitSellingPrice}*#{orderBean.o.quantity} ;
+        var data = google.visualization.arrayToDataTable([
+          ['Task', ''],
+          ['gain', gain ],
+          ['Cost ', Cost	  ],
+     
+       
+        ]);
+
+        var options = {
+          title: 'Cost and profit By Order : #{orderBean.o.costumer} '
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart2'));
+
+        chart.draw(data, options);
+      }
+    </script>
+    
+    
+    			
+				
+				
+	
+
+	
+	
+			
+			</ui:define>
+			
+			</ui:composition>

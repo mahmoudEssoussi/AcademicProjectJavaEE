@@ -1,0 +1,46 @@
+
+
+
+<h:dataTable value="#{EmployeeBean.users}" var="user" border="1" xmlns:h="http://xmlns.jcp.org/jsf/html"
+                                                                 xmlns:f="http://java.sun.com/jsf/core"> 
+                                                                 
+
+	<h:column>
+    		<f:facet name="header">
+    				<h:outputText value="firstname" />
+    		</f:facet>
+    		<h:outputText value="#{user.firstname}" />
+   </h:column>
+   
+   	<h:column>
+    		<f:facet name="header">
+    				<h:outputText value="lastname" />
+    		</f:facet>
+    		<h:outputText value="#{user.lastname}" />
+   </h:column>
+   
+   	<h:column>
+    		<f:facet name="header">
+    				<h:outputText value="login" />
+    		</f:facet>
+    		<h:outputText value="#{user.login}" />
+   </h:column>
+   
+   	<h:column>
+    		<f:facet name="header">
+    				<h:outputText value="password" />
+    		</f:facet>
+    		<h:outputText value="#{user.password}" />
+   </h:column>
+   	<h:column>
+    		<f:facet name="header">
+    				<h:outputText value="role" />
+    		</f:facet>
+    		<h:outputText value="#{user.role}" />
+   </h:column>
+</h:dataTable>
+
+
+
+
+

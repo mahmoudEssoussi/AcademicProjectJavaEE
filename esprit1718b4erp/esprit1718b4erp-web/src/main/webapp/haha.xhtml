@@ -1,0 +1,178 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                 xmlns:p="http://primefaces.org/ui"
+                 template="/template-ref/main.xhtml"
+                  xmlns:s="http://jboss.com/products/seam/taglib"
+              
+               >
+                	
+			<ui:define name="pageContent">
+			
+			
+<h:messages class="alert alert-info" id="message" showDetail="true"
+		autoUpdate="true" closable="true" />
+			<div class="widget-box">
+			
+			<div class="widget-header widget-header-small">
+			<h5 class="widget-title lighter">Add Primary Materials Item</h5>
+			</div>
+			
+			<div class="widget-main">
+			<form class="form-search">
+			<div class="row">
+			<div class="col-xs-12 col-sm-8">
+			
+			<h:form>
+			
+			<div class="row">
+		<div class="col-xs-12 col-sm-5">
+			<span class="block input-icon input-icon-right"> Primary Materials Name
+				<h:inputText  required="true" requiredMessage="Insert  name" value="#{primaryStock.pms.itemName}" type="text" id="inputInfo" class="width-100" />
+			</span>
+		</div>
+		</div>
+		
+		
+		<div class="row">
+		<div class="col-xs-12 col-sm-5">
+			<span class="block input-icon input-icon-right"> Primary Materials ref
+				<h:inputText required="true" requiredMessage="Insert  ref"  value="#{primaryStock.pms.ref}" type="text" class="width-100" />
+			</span>
+		</div>
+		</div>
+		
+		<div class="row">
+		<div class="col-xs-12 col-sm-5">
+			<span class="block input-icon input-icon-right"> Initial Stock
+				<h:inputText value="#{primaryStock.pms.initialStock}" type="text"  class="width-100" />
+			</span>
+		</div>
+		</div>
+		
+		<div class="row">
+		<div class="col-xs-12 col-sm-5">
+			<span class="block input-icon input-icon-right"> priceUnit
+				<h:inputText value="#{primaryStock.pms.unitPrice}" type="text" class="width-100" />
+			
+			</span>
+		</div>
+		</div>
+		
+		
+		
+	
+ 
+  
+       
+   			<div class="row">
+			<div class="col-xs-12 col-sm-5" >
+			<h:form>
+			<h:commandButton class="btn btn-white btn-info btn-bold"  action="#{primaryStock.add()}"  value="Save" >
+
+			</h:commandButton>
+		   	</h:form>
+			</div>
+			</div>
+			
+
+					
+  	</h:form>
+  	
+  	
+  	</div>
+	</div>
+	</form>
+	</div>
+  	
+  	</div>
+  	
+  	<div class="widget-box">
+			
+			<div class="widget-header widget-header-small">
+			<h5 class="widget-title lighter">New In </h5>
+			</div>
+			
+			<div class="widget-main">
+			<form class="form-search">
+			<div class="row">
+			<div class="col-xs-12 col-sm-8">
+			
+			<h:form>
+  	
+  	
+  	  <h:selectOneMenu value="#{primaryStock.dd}" converter="beerConverter">
+                <f:selectItems value="#{primaryStock.listPms}" var="beer"
+                               itemValue="#{beer}"
+                               itemLabel="#{beer.itemName}"/>
+            </h:selectOneMenu>
+  	
+  
+
+
+<div class="row">
+		<div class="col-xs-12 col-sm-5">
+			<span class="block input-icon input-icon-right"> quantity
+				<h:inputText value="#{primaryStock.quantity}" type="text"  class="width-100" />
+			</span>
+		</div>
+		</div>
+		
+		<div class="row">
+		<div class="col-xs-12 col-sm-5">
+			<span class="block input-icon input-icon-right"> unit Price 
+				<h:inputText value="#{primaryStock.unitPrice}" type="text"  class="width-100" />
+			</span>
+		</div>
+		</div>
+
+
+	<h:commandButton class="btn btn-white btn-info btn-bold"  action="#{primaryStock.SuperAdd()}"  value="Save" >
+
+			</h:commandButton>
+
+</h:form>
+</div>
+</div>
+</form>
+</div>
+</div>
+
+
+  
+  	
+  	<div class="widget-box">
+			
+			<div class="widget-header widget-header-small">
+			<h5 class="widget-title lighter">Convert DB to Pdf </h5>
+			</div>
+			
+			<div class="widget-main">
+			<form class="form-search">
+			<div class="row">
+			<div class="col-xs-12 col-sm-8">
+			
+			<h:form>
+  	
+  	
+  
+  	
+  
+
+
+
+
+	<h:commandButton class="btn btn-white btn-info btn-bold"  action="#{primaryStock.PDF()}"  value="Convert" >
+
+			</h:commandButton>
+
+</h:form>
+</div>
+</div>
+</form>
+</div>
+</div>
+    
+			</ui:define>
+</ui:composition>
